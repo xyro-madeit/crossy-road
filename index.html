@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="theme-color" content="#08131b" />
+    <link rel="icon" href="/favicon.svg" />
+    <meta name="description" content="Crossy Angel Road — an arcade crossing game with cliffs, rivers, lava and trains." />
+    <title>Crossy Angel Road</title>
+  </head>
+  <body>
+    <div id="app">
+      <canvas id="game"></canvas>
+
+      <div id="hud">
+        <div class="hud-card score-card">
+          <span class="hud-kicker">DISTANCE</span>
+          <strong id="score">0</strong>
+          <span class="hud-unit">steps</span>
+        </div>
+        <div class="hud-card lives-card">
+          <span class="hud-kicker">LIVES</span>
+          <div id="lives" aria-label="3 lives">❤ ❤ ❤</div>
+        </div>
+      </div>
+
+      <div id="status" class="hidden">
+        <div id="status-title"></div>
+        <div id="status-subtitle"></div>
+      </div>
+
+      <div id="start-panel" class="panel">
+        <div class="eyebrow">ARCADE SURVIVAL</div>
+        <h1>CROSSY<br/><span>ANGEL ROAD</span></h1>
+        <p>Cross cliffs, lava, rivers, and screaming train lines. When you wipe out, you rewind 10 steps and return with wings.</p>
+        <button id="start-btn">START RUN</button>
+        <div class="controls-copy">WASD / arrow keys · swipe · on-screen pad</div>
+      </div>
+
+      <div id="game-over" class="panel hidden">
+        <div class="eyebrow danger">RUN OVER</div>
+        <h2>THE ANGEL<br/>HAS FALLEN</h2>
+        <p id="final-score">Distance: 0 steps</p>
+        <button id="restart-btn">RUN IT BACK</button>
+      </div>
+
+      <div id="touch-controls" aria-label="Touch controls">
+        <button data-move="left" aria-label="Move left">←</button>
+        <div class="touch-center">
+          <button data-move="forward" aria-label="Move forward">↑</button>
+          <button data-move="back" aria-label="Move back">↓</button>
+        </div>
+        <button data-move="right" aria-label="Move right">→</button>
+      </div>
+
+      <div id="flash"></div>
+      <div id="vignette"></div>
+    </div>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
